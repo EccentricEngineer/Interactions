@@ -1,6 +1,6 @@
 # LovSquad: Community based growth for content creators.
 
-[project.com](https://project.com)
+[www.lovsquad.com](https://project.com)
 
 ## Install
 
