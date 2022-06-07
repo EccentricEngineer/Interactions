@@ -10,6 +10,17 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :username,
+                required: true,
+                autofocus: true %>
+    <%= f.input :bio,
+                required: true,
+                autofocus: true %>
+    <%= f.input :profile_picture,
+                as: :file,
+                autofocus: true %>
+    <%= f.input :ig_tag,
+                autofocus: true %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
