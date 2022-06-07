@@ -7,22 +7,35 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 require 'faker'
+require 'resolv-replace'
 
 puts 'Seed: Deleting existing records...'
 
-Channel.delete_all
 Channeluser.delete_all
+Channel.delete_all
 Message.delete_all
 User.delete_all
 
 puts 'Seed: Seeding...'
 
-40.times do
+images = [
+        "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0aXN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1618578353017-74b491b3ece9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+        "https://images.unsplash.com/photo-1611244419377-b0a760c19719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+        "https://images.unsplash.com/photo-1602331117300-85450ebe5c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1573844874632-733b0d7dc163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1643310814277-536eacfa21ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVzY2lhbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1564109799258-6b7c25cd1c92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1581368076903-c20fee986735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODl8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+        "https://images.unsplash.com/photo-1632478179636-23973447e686?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+        ]
+
+10.times do
   email = Faker::Internet.email
   username = Faker::Artist.name
   password = "123456"
   bio = Faker::Quote.matz
-  picture_file = Faker::Avatar.image
+  picture_file = URI.open(images.sample)
   ig_tag = "ig_tag"
 
   new_user = User.new(email: email, username: username, password: password, bio: bio, ig_tag: ig_tag )
@@ -31,20 +44,25 @@ puts 'Seed: Seeding...'
 
 end
 
-20.times do
+creators = User.order('RANDOM()').first(5)
+
+5.times do
   name = Faker::Hipster.word
   description = Faker::Hipster.sentence
-  # start from here
+  photo_file = URI.open(Faker::LoremPixel.image(size: "1000x300", is_gray: false, category: 'fashion'))
+  user_id = creators.sample
 
-  new_user = User.new(email: email, username: username, password: password, bio: bio, ig_tag: ig_tag )
-  new_user.profile_picture.attach(io: picture_file, filename: 'avatar.png', content_type: 'image/png')
-  new_user.save
-
+  new_channel = Channel.new(name: name, description: description, user_id: user_id)
+  new_channel.photo.attach(io: photo_file, filename: 'channelphoto.png', content_type: 'image/png')
+  new_channel.save
 end
 
+
+# User.all.each do |user|
+#   Channeluser.new(user_id: user.id, channel_id: Channel.order('RANDOM()').first.id)
+# end
+
 puts 'Seed: Finished seeding!'
-
-
 
 # Seeding links
 
@@ -75,22 +93,3 @@ puts 'Seed: Finished seeding!'
 # https://images.unsplash.com/photo-1630841539293-bd20634c5d72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80
 
 # Artists
-
-
-# https://images.unsplash.com/photo-1628359355624-855775b5c9c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0aXN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1618578353017-74b491b3ece9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
-
-# https://images.unsplash.com/photo-1611244419377-b0a760c19719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
-
-# https://images.unsplash.com/photo-1602331117300-85450ebe5c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1573844874632-733b0d7dc163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1643310814277-536eacfa21ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVzY2lhbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1564109799258-6b7c25cd1c92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1581368076903-c20fee986735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODl8fGFydGlzdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-
-# https://images.unsplash.com/photo-1632478179636-23973447e686?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
