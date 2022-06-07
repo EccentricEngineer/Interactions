@@ -1,0 +1,16 @@
+<%= cl_image_tag @channel.photo.key, height: 500, width: auto, crop: :fill%>
+
+<h1> Welcome to <%= @channel.name %> </h1>
+
+<h2>This is the channel of <%= @channel.user.email %> </h2>
+
+<h3>Here's the list of fans</h3>
+
+<ul>
+<% @channel.channelusers.each do |member| %>
+  <li>
+    <%= cl_image_tag member.user.profile_picture.key, height: 500, width: auto, crop: :fill %>
+    <%= member.user.email %>
+  </li>
+<% end %>
+</ul>

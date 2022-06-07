@@ -1,0 +1,20 @@
+<h1>Here's the list of the channels</h1>
+
+<ul>
+<% @channels.each do |channel|  %>
+  <li>
+    <%= cl_image_tag @channel.photo.key, height: 300, width: 300, crop: :fill %>
+    <%= link_to channel.name, channel_path(channel) %>
+    <%= channel.user.email %>
+    <%= link_to "Join this channel",
+        channel_join_path(channel),
+        method: :post %>
+    <%= link_to "Delete",
+            channel_path(channel),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    <%= link_to "Edit", edit_channel_path(channel) %>
+
+  </li>
+<% end %>
+</ul>

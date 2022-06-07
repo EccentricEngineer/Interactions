@@ -1,0 +1,7 @@
+<h1>Create you channel!</h1>
+<%= simple_form_for(@channel) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+   <%= f.input :photo, as: :file %>
+  <%= f.submit "Create channel", class: "btn btn-primary" %>
+<% end %>
