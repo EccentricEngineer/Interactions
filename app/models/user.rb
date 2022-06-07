@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  has_many :channelusers
+  has_many :channelusers, dependent: :delete_all
   has_many :channels, through: :channelusers
   # to be verified
   has_one :channel

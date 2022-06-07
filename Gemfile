@@ -65,3 +65,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Cloudinary Gemfile
 gem 'cloudinary', '~> 1.16.0'
+
+# add faker gem
+gem 'faker'
+
+#timeout problems solution => https://stackoverflow.com/questions/42036133/ruby-netopentimeout-execution-expired
+gem 'resolv-replace'
