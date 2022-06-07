@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
+require 'faker'
 
 puts 'Seed: Deleting existing records...'
 
@@ -16,26 +17,29 @@ User.delete_all
 
 puts 'Seed: Seeding...'
 
+40.times do
+  email = Faker::Internet.email
+  username = Faker::Artist.name
+  password = "123456"
+  bio = Faker::Quote.matz
+  picture_file = Faker::Avatar.image
+  ig_tag = "ig_tag"
+
+  new_user = User.new(email: email, username: username, password: password, bio: bio, ig_tag: ig_tag )
+  new_user.profile_picture.attach(io: picture_file, filename: 'avatar.png', content_type: 'image/png')
+  new_user.save
+
+end
+
 20.times do
+  name = Faker::Hipster.word
+  description = Faker::Hipster.sentence
+  # start from here
 
-user1 = User.create!(
-  name: "Malcolm",
-  email: "yes@yes.yes",
-  password: "1234567890",
-)
+  new_user = User.new(email: email, username: username, password: password, bio: bio, ig_tag: ig_tag )
+  new_user.profile_picture.attach(io: picture_file, filename: 'avatar.png', content_type: 'image/png')
+  new_user.save
 
-
-studio1 = Studio.new(
-  name: "Alexie's Studio",
-  user: user1,
-  address: "London",
-  opening_hour: "2022-05-31 14:22:53.657840837 +0200",
-  closing_hour: "2022-05-31 15:22:53.657840937 +0200",
-  price: 200
-)
-
-file = URI.open('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
-studio1.photo_url.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-studio1.save
+end
 
 puts 'Seed: Finished seeding!'
