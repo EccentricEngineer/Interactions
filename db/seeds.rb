@@ -49,18 +49,18 @@ creators = User.order('RANDOM()').first(5)
 5.times do
   name = Faker::Hipster.word
   description = Faker::Hipster.sentence
-  photo_file = URI.open(Faker::LoremPixel.image(size: "1000x300", is_gray: false, category: 'fashion'))
-  user_id = creators.sample
+  photo_file = URI.open(images.sample)
+  user = creators.sample
 
-  new_channel = Channel.new(name: name, description: description, user_id: user_id)
+  new_channel = Channel.new(name: name, description: description, user: user)
   new_channel.photo.attach(io: photo_file, filename: 'channelphoto.png', content_type: 'image/png')
   new_channel.save
 end
 
 
-# User.all.each do |user|
-#   Channeluser.new(user_id: user.id, channel_id: Channel.order('RANDOM()').first.id)
-# end
+User.all.each do |user|
+  Channeluser.create!(user: user, channel: Channel.order('RANDOM()').first)
+end
 
 puts 'Seed: Finished seeding!'
 
