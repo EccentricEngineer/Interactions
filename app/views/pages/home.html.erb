@@ -1,5 +1,43 @@
-<h1>lovsquad</h1>
-<p>This is the homepage</p>
-<a href="/channels/new">Create new channel</a>
-<a href="/channels">See all the channels</a>
-<%= render "shared/rewardcard" %>
+
+<%# <h1>lovsquad</h1>
+<p>This is the homepage</p> %>
+    <main>
+      <div class="container">
+        <!------------------- LEFT -->
+        <div class="left">
+          <!------------------ creator box -->
+          <%= render "shared/creator_box" %>
+          <!--------------- online fans -->
+          <div class="online-box">
+            <h3 class="title-category">ONLINE FANS</h3>
+            <div class="fan-banner">
+              <%= render 'shared/online_fan'%>
+              <%= render 'shared/online_fan'%>
+              <%= render 'shared/online_fan'%>
+              <%= render 'shared/online_fan'%>
+              <%= render 'shared/online_fan'%>
+              <%= render 'shared/online_fan'%>
+            </div>
+          </div>
+        </div>
+        <!------------------- MIDDLE -->
+        <div class="middle">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+          <a href="/channels/new">Create new channel</a>
+          <a href="/channels">See all the channels</a>
+        </div>
+        <!------------------- RIGHT -->
+        <div class="right">
+          <!--------------- channels -->
+          <div class="channel-box">
+            <h3 class="title-category">CHANNELS</h3>
+            <%= render 'shared/channel_list'%>
+            <%= render 'shared/channel_list'%>
+            <%= render 'shared/channel_list'%>
+            <%= render 'shared/channel_list'%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>

@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+
+/* MAIN */
+main {
+  position: relative;
+  top: 5.4rem;
+}
+
+main .container {
+  display: grid;
+  grid-template-columns: 20vw auto 18vw;
+  column-gap: 2rem;
+  position: relative;
+}
+
+ /* LEFT  */
+
+main .container .left {
+  height: max-content;
+  position: sticky;
+  top: var(--sticky-top-left);
+}
+
+// MIDDLE
+
+/* RIGHT */
