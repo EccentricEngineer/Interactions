@@ -1,0 +1,44 @@
+main .container .left .online-box {
+  border-radius: 10px;
+  border: 1px solid $color-border-transparent;
+  background: white;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 1rem;
+  width: 100%;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 15px;
+  .title-category {
+    color: $color-red;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-category);
+  }
+  .fan-banner {
+    display: flex;
+    flex-direction: column;
+  }
+  .fan-avatar {
+    display: flex;
+    padding-top: 0.3rem;
+    align-items: center;
+  }
+  .fan-avatar img {
+    width: 1.8rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  .fan-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+  }
+  p {
+    margin: 0px;
+  }
+  h4 {
+    margin: 0px;
+  }
+}

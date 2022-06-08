@@ -1,12 +1,67 @@
-.navbar-lewagon {
-  justify-content: space-between;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
   background: white;
+  padding: 0.7rem 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  .search-bar {
+    // background-color: var(--color-white);
+    background-color: white;
+    border-radius: 25px;
+    padding: 0.6rem 1rem;
+    border: 1px solid $color-dark-transparent;
+    color: $color-dark-transparent;
+  }
+
+  input[type="search"] {
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: $color-dark-transparent;
+  }
+
+  ::placeholder {
+    color: $color-dark-transparent;
+  }
+  .logo-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  img {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    object-fit: contain;
+  }
+  .log {
+    color: red;
+    margin: 0%;
+    padding-left: 2rem;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.right-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  img {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  p {
+    margin: 0%;
+  }
 }
