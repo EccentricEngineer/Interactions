@@ -7,6 +7,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
+    @message = Message.new
   end
 
   def new

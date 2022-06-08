@@ -4,4 +4,6 @@ class Channel < ApplicationRecord
   has_many :users, through: :channelusers
 
   has_one_attached :photo
+
+  has_many :messages
 end

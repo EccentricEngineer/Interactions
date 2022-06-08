@@ -3,7 +3,7 @@
 <ul>
 <% @channels.each do |channel|  %>
   <li>
-    <%= cl_image_tag @channel.photo.key, height: 300, width: 300, crop: :fill %>
+    <%= cl_image_tag channel.photo.key, height: 300, width: 300, crop: :fill %>
     <%= link_to channel.name, channel_path(channel) %>
     <%= channel.user.email %>
     <%= link_to "Join this channel",
