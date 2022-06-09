@@ -1,5 +1,11 @@
-<<<<<<< HEAD
-=======
-<h1>Wlecome to lovsquad</h1>
->>>>>>> 0c6e4c0e926a46c7d050a632a9828773abcb4936
-<%=render "shared/search_results" %>
+<div class="home-container">
+  <div class="title-description">
+    <h2>Welcome back to <span>lovsquad</span>, @<%= current_user.username %>!</h2>
+    <h3>Select a channel:</h3>
+  </div>
+  <div class="grid-homepage">
+    <%=render "shared/search_results" %>
+    <%=render "shared/search_results" %>
+    <%=render "shared/search_results" %>
+  </div>
+</div>
