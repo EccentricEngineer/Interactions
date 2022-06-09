@@ -5,7 +5,7 @@
   <li>
     <%= cl_image_tag channel.photo.key, height: 100, width: 100, crop: :fill %>
     <%= channel.name %>
-    <% if @channeluser.channel.include?(current_user) %>
+    <% if current_user.channelusers.include?(Channeluser.find_by(channel_id: channel.id)) %>
       <%= link_to "visit channel", channel_path(channel) %>
     <% else %>
       <%= link_to "Join this channel",
