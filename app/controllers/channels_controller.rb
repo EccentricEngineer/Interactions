@@ -4,9 +4,11 @@ class ChannelsController < ApplicationController
 
   def index
     @channels = Channel.all
+    @channelusers = Channeluser.all
   end
 
   def show
+    @message = Message.new
   end
 
   def new
@@ -38,7 +40,7 @@ class ChannelsController < ApplicationController
   def join
     @channeluser = Channeluser.new({ user_id: current_user.id, channel_id: @channel.id })
     if @channeluser.save
-      render :show
+      redirect_to channel_path(@channel)
     else
       render json: @channeluser.errors.full_messages, status: 400
     end

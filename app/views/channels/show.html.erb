@@ -1,4 +1,4 @@
-<%= cl_image_tag @channel.photo.key, height: 500, width: auto, crop: :fill%>
+<%= cl_image_tag @channel.photo.key, height: 500, crop: :fill%>
 
 <h1> Welcome to <%= @channel.name %> </h1>
 
@@ -9,8 +9,31 @@
 <ul>
 <% @channel.channelusers.each do |member| %>
   <li>
-    <%= cl_image_tag member.user.profile_picture.key, height: 500, width: auto, crop: :fill %>
+    <%= cl_image_tag member.user.profile_picture.key, height: 500, crop: :fill %>
     <%= member.user.email %>
   </li>
 <% end %>
 </ul>
+
+<div class="container chatroom"
+  data-controller="channel-subscription"
+  data-channel-subscription-channel-id-value="<%= @channel.id %>"
+>
+  <h1>#<%= @channel.name %></h1>
+  <div class="messages" data-channel-subscription-target="messages">
+    <% @channel.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  <%= simple_form_for [@channel, @message],
+    remote: true,
+    html: {data: {action: "ajax:success->channel-subscription#resetForm"}, class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@channel.name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary" %>
+  <% end %>
+</div>
