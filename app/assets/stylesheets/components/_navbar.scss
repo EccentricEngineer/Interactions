@@ -37,13 +37,13 @@ nav {
     align-items: center;
   }
   img {
-    width: 2.7rem;
+    width: 3vw;
     aspect-ratio: 1/1;
     overflow: hidden;
     object-fit: contain;
   }
   .log {
-    color: red;
+    color: $color-red;
     margin: 0%;
     padding-left: 2rem;
   }
@@ -53,7 +53,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  gap: 3vw;
   img {
     width: 2.7rem;
     aspect-ratio: 1/1;

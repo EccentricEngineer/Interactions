@@ -1,7 +1,7 @@
 <nav>
   <div class="container">
     <div class="logo-nav">
-      <img src="./assets/logo.png" alt="lovsquad">
+      <%= image_tag "logo.png", class: "img", width: 50 %>
       <h2 class="log">
         lovsquad
       </h2>
@@ -12,10 +12,12 @@
     </div>
     <div class="right-navbar">
       <div class="user-name">
-        <h4>@user_name</h4>
+        <h4>@<%= current_user.username%></h4>
       </div>
       <div class="user-avatar">
-        <img src="./assets/user-photo.avif" alt="#">
+          <%= cl_image_tag current_user.profile_picture.key, class: "img", height: 45 %>
+          <%# <%= image_tag "user-photo.avif", class: "img", width: 50 %>
+        <%# <img src="./assets/user-photo.avif" alt="#"> %>
       </div>
     </div>
   </div>

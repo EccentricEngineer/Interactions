@@ -3,18 +3,20 @@
 <ul>
 <% @channels.each do |channel|  %>
   <li>
-    <%= cl_image_tag @channel.photo.key, height: 300, width: 300, crop: :fill %>
-    <%= link_to channel.name, channel_path(channel) %>
-    <%= channel.user.email %>
-    <%= link_to "Join this channel",
-        channel_join_path(channel),
-        method: :post %>
+    <%= cl_image_tag channel.photo.key, height: 100, width: 100, crop: :fill %>
+    <%= channel.name %>
+    <% if current_user.channelusers.include?(Channeluser.find_by(channel_id: channel.id)) %>
+      <%= link_to "visit channel", channel_path(channel) %>
+    <% else %>
+      <%= link_to "Join this channel",
+      channel_join_path(channel),
+      method: :post %>
+    <% end %>
     <%= link_to "Delete",
-            channel_path(channel),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+    channel_path(channel),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
     <%= link_to "Edit", edit_channel_path(channel) %>
-
   </li>
 <% end %>
 </ul>

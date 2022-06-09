@@ -1,0 +1,11 @@
+<div id="message-<%= message.id %>">
+  <div class="message-box">
+  <%# wrong link %>
+    <%# <% cl_image_tag @channel.photo.key, class: "img", height: 80 %>
+    <small>
+      <strong><%= message.user.username %></strong>
+      <div class="message-content"><p><%= message.content %></p></div>
+      <div class="posted-date"><i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i></div>
+    </small>
+  </div>
+</div>
