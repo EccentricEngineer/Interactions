@@ -14,8 +14,8 @@ main .container .left .creator-box {
     color: $color-red;
   }
   img {
-    width: 5rem;
-    aspect-ratio: 1/1;
+    width: 5rem !important;
+    aspect-ratio: 1/1 !important;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;

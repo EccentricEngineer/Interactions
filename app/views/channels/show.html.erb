@@ -1,39 +1,51 @@
-<%= cl_image_tag @channel.photo.key, height: 500, crop: :fill%>
+<main>
+  <div class="container">
+  <!------------------- LEFT -->
+    <div class="left">
+      <!------------------ creator box -->
+      <%= render "shared/creator_box" %>
+      <!--------------- online fans -->
+      <div class="online-box">
+        <h3 class="title-category">FANS</h3>
+        <div class="fan-banner">
+          <%= render 'shared/online_fan'%>
+          <%= render 'shared/online_fan'%>
+          <%= render 'shared/online_fan'%>
+          <%= render 'shared/online_fan'%>
+          <%= render 'shared/online_fan'%>
+          <%= render 'shared/online_fan'%>
+        </div>
+      </div>
+    </div>
+    <!------------------- MIDDLE -->
+    <div class="middle">
+      <%= render "shared/tabs" %>
+      <%= render "shared/chatbox" %>
+      <p>Please respect the rules of the channel, <a href="#">click here</a> to learn more.</p>
+      <a href="/channels/new">Create new channel</a>
+      <a href="/channels">See all the channels</a>
 
-<h1> Welcome to <%= @channel.name %> </h1>
-
-<h2>This is the channel of <%= @channel.user.email %> </h2>
-
-<h3>Here's the list of fans</h3>
+      <%= render "shared/rewardcard" %>
+    </div>
+    <!------------------- RIGHT -->
+    <div class="right">
+      <!--------------- channels -->
+      <div class="channel-box">
+        <h3 class="title-category">CHANNELS</h3>
+        <%= render 'shared/channel_list'%>
+        <%= render 'shared/channel_list'%>
+        <%= render 'shared/channel_list'%>
+        <%= render 'shared/channel_list'%>
+      </div>
+    </div>
+  </div>
+</main>
 
 <ul>
-<% @channel.channelusers.each do |member| %>
-  <li>
-    <%= cl_image_tag member.user.profile_picture.key, height: 500, crop: :fill %>
-    <%= member.user.email %>
-  </li>
-<% end %>
-</ul>
-
-<div class="container chatroom"
-  data-controller="channel-subscription"
-  data-channel-subscription-channel-id-value="<%= @channel.id %>"
->
-  <h1>#<%= @channel.name %></h1>
-  <div class="messages" data-channel-subscription-target="messages">
-    <% @channel.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
-  <%= simple_form_for [@channel, @message],
-    remote: true,
-    html: {data: {action: "ajax:success->channel-subscription#resetForm"}, class: "d-flex"} do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@channel.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary" %>
+  <% @channel.channelusers.each do |member| %>
+    <li>
+      <%= cl_image_tag member.user.profile_picture.key, height: 500, crop: :fill %>
+      <%= member.user.email %>
+    </li>
   <% end %>
-</div>
+</ul>
