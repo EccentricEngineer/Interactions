@@ -43,8 +43,8 @@ nav {
     overflow: hidden;
     object-fit: contain;
   }
-  .log {
-    color: $color-red;
+  .log a {
+    color: $color-red !important;
     margin: 0%;
     padding-left: 2rem !important;
   }
