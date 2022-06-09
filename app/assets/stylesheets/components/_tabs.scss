@@ -1,0 +1,11 @@
+.tabs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  .active-tab {
+    border-bottom: 3px solid $color-red;
+    padding-bottom: 10px;
+  }
+  .inactive-tab {
+    color: $color-dark-transparent;
+  }
+}
