@@ -8,9 +8,11 @@ main {
 
 main .container {
   display: grid;
-  grid-template-columns: 20vw auto 18vw;
+  // grid-template-columns: 20vw auto 18vw;
+  grid-template-columns: 15vw 45vw 15vw;
   column-gap: 2rem;
   position: relative;
+  justify-content: center;
 }
 
  /* LEFT  */
