@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 2022_06_10_093725) do
     t.text "bio"
     t.text "profile_picture"
     t.string "ig_tag"
-    t.string "provider"
-    t.string "uid"
     t.string "access_token"
     t.string "instagram_user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
