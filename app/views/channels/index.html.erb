@@ -1,22 +1,25 @@
-<h1>Here's the list of the channels</h1>
+<div class="home-container">
+    <div class="title-description">
+    <h2>Welcome back to <span>lovsquad</span>, @<%= current_user.username %>!</h2>
+    <h3>Select a channel:</h3>
+  </div>
 
-<ul>
-<% @channels.each do |channel|  %>
-  <li>
-    <%= cl_image_tag channel.photo.key, height: 100, width: 100, crop: :fill %>
-    <%= channel.name %>
-    <% if current_user.channelusers.include?(Channeluser.find_by(channel_id: channel.id)) %>
-      <%= link_to "visit channel", channel_path(channel) %>
-    <% else %>
-      <%= link_to "Join this channel",
-      channel_join_path(channel),
-      method: :post %>
+  <div class="grid-homepage">
+    <% @channels.each do |channel|  %>
+    <div class="blog-card">
+      <div class="image-searchcard">
+        <%= cl_image_tag channel.photo.key %>
+      </div>
+      <div class="description">
+        <h3> <%= channel.name %> </h3>
+        <p> <%= channel.description %> </p>
+        <% if current_user.channelusers.include?(Channeluser.find_by(channel_id: channel.id)) %>
+          <%= link_to "Visit", channel_path(channel), class: "our-button" %>
+        <% else %>
+          <%= link_to "Join", channel_join_path(channel), method: :post, class: "our-button" %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
-    <%= link_to "Delete",
-    channel_path(channel),
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
-    <%= link_to "Edit", edit_channel_path(channel) %>
-  </li>
-<% end %>
-</ul>
+  </div>
+</div>

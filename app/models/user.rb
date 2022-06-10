@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :channels, through: :channelusers
   # to be verified
   has_one :channel
-  has_many :messages
+  has_many :messages, dependent: :delete_all
 
   has_one_attached :profile_picture
 

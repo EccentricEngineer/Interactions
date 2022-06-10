@@ -9,20 +9,10 @@
 <ul>
   <% @channel.channelusers.each do |member| %>
     <div class="fan-avatar">
-      <%= cl_image_tag member.user.profile_picture.key, height: 50, crop: :fill %>
+      <%= cl_image_tag member.user.profile_picture.key%>
       <div class="fan-text">
         <h4 class="fan-username">@<%= member.user.username %></h4>
       </div>
     </div>
-  <% end %>
-</ul>
-
-
-<ul>
-  <% @channel.channelusers.each do |member| %>
-    <li>
-      <%= cl_image_tag member.user.profile_picture.key, height: 500, crop: :fill %>
-      <%= member.user.email %>
-    </li>
   <% end %>
 </ul>

@@ -12,13 +12,20 @@ nav {
   align-items: center !important;
   justify-content: space-between !important;
   }
+
   .search-bar {
     // background-color: var(--color-white);
     background-color: white;
     border-radius: 25px;
-    padding: 0.6rem 1rem;
     border: 1px solid $color-dark-transparent;
     color: $color-dark-transparent;
+    display: flex;
+    padding-left: 20px;
+
+    form {
+      border: none;
+    }
+
   }
 
   input[type="search"] {
@@ -27,11 +34,14 @@ nav {
     margin-left: 1rem;
     font-size: 0.9rem;
     color: $color-dark-transparent;
+    border: none;
+
+    ::placeholder {
+      color: $color-dark-transparent;
+    }
   }
 
-  ::placeholder {
-    color: $color-dark-transparent;
-  }
+
   .logo-nav {
     display: flex;
     flex-direction: row;
