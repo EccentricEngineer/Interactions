@@ -71,3 +71,8 @@ gem 'faker'
 
 #timeout problems solution => https://stackoverflow.com/questions/42036133/ruby-netopentimeout-execution-expired
 gem 'resolv-replace'
+
+gem 'instagram_basic_display'
+
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'httparty'
