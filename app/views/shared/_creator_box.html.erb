@@ -5,7 +5,7 @@
   </div>
   <div class="creator-text">
     <h4>@<%= @channel.name %></h4>
-    <p><b>1234</b> followers</p>
+    <p><b><%= @channel.channelusers.count %></b> fans</p>
   </div>
   <div class="creator-description">
     <h3 class="title-category">BIO</h3>
@@ -13,7 +13,7 @@
   </div>
 <%# to import from ali %>
 
-  <a href="#" class="our-button">JOIN</a>
+  <a href="#" class="our-button">unsubscribe</a>
 
 <%# to import from ali %>
 

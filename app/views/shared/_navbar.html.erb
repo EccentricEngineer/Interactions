@@ -10,11 +10,12 @@
     </div>
 
     <div class="search-bar">
-      <i class="fas fa-search"></i>
-      <input type="search" placeholder="search for other channels">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%= form_tag(channels_path, :method => "get", id: "search-form") do %>
+      <%= search_field_tag :search, params[:search], placeholder: "search your favourite channels" ,class:"form-control string required" %>
+      <button class="navbar-toggler" type="submit" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+      <% end %>
     </div>
 
     <div class="collapse navbar-collapse nav-antibs" id="navbarSupportedContent">
@@ -26,7 +27,7 @@
             </div>
           </div>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.profile_picture.key, height: 45, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.profile_picture.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
