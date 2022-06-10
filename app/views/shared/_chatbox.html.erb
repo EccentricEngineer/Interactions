@@ -15,7 +15,7 @@
     <%= f.input :content,
       label: false,
       placeholder: "type your message to ##{@channel.name}",
-      wrapper_html: {class: "flex-grow-1"}
+      wrapper_html: {class: "flex-grow-1 align-inputfield"}
     %>
     <%= f.submit "Send", class: "btn btn-primary" %>
   <% end %>
