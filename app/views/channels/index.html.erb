@@ -14,9 +14,9 @@
         <h3> <%= channel.name %> </h3>
         <p> <%= channel.description %> </p>
         <% if current_user.channelusers.include?(Channeluser.find_by(channel_id: channel.id)) %>
-          <%= link_to "Join", channel_join_path(channel), method: :post, class: "our-button" %>
-        <% else %>
           <%= link_to "Visit", channel_path(channel), class: "our-button" %>
+        <% else %>
+          <%= link_to "Join", channel_join_path(channel), method: :post, class: "our-button" %>
         <% end %>
       </div>
     </div>
