@@ -1,8 +1,10 @@
-<div class="channel-banner">
-  <div class="channel-avatar">
-    <img src="./assets/user-photo.avif" alt="user avatar">
-    <div class="channel-text">
-      <h4 class="channel-title">Anna's painting corner</h4>
+<ul>
+  <% current_user.channelusers.each do |element| %>
+    <div class="channel-avatar">
+      <%= cl_image_tag element.channel.photo.key, height: 50, crop: :fill %>
+      <div class="channel-text">
+        <h4 class="channel-title">@<%= element.channel.name %></h4>
+      </div>
     </div>
-  </div>
-</div>
+  <% end %>
+</ul>

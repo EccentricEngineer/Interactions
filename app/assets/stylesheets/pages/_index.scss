@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "homepage";
 
 *,
 *::before,
@@ -11,10 +12,11 @@
   text-decoration: none;
   list-style: none;
   border: none;
+  font-family: 'Inter', sans-serif !important;
+
 }
 
 body {
-  font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: $color-dark;
   background: $color-light;
@@ -26,18 +28,22 @@ body {
 
   h2 {
     font-size: 22px;
+    font-weight: 400;
   }
 
   h3 {
     font-size: 16px;
+    font-weight: 400;
   }
 
   h4 {
     font-size: 1rem;
+    font-weight: 300;
   }
 
   p {
     font-size: 13px;
+    font-weight: 300;
   }
   a {
     text-decoration: none;
