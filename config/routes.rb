@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/success', to: 'authorizations#success'
+  get '/code', to: 'authorizations#code'
 
   post '/channels/:id/join', to: 'channels#join', as: 'channel_join'
 
