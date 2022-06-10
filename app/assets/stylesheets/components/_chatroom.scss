@@ -34,4 +34,14 @@
     border: none;
     padding: 10px 10px;
   }
+
 }
+
+.align-inputfield {
+    margin-bottom: 0% !important;
+    font-size: 12px;
+    ::placeholder {
+      font-size: 12px;
+      align-items: center;
+    }
+  }
