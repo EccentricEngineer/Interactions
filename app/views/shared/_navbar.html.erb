@@ -1,21 +1,45 @@
 <nav>
-  <div class="container">
+  <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
+  <div class="container-fluid">
+
     <div class="logo-nav">
-      <img src="./assets/logo.png" alt="lovsquad">
+      <%= image_tag "logo.png", class: "img", width: 50 %>
       <h2 class="log">
-        lovsquad
+        <%= link_to "lovsquad", root_path %>
       </h2>
     </div>
+
     <div class="search-bar">
       <i class="fas fa-search"></i>
       <input type="search" placeholder="search for other channels">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     </div>
-    <div class="right-navbar">
-      <div class="user-name">
-        <h4>@user_name</h4>
-      </div>
-      <div class="user-avatar">
-        <img src="./assets/user-photo.avif" alt="#">
+
+    <div class="collapse navbar-collapse nav-antibs" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <div class="right-navbar">
+            <div class="user-name">
+              <h4>@<%= current_user.username%></h4>
+            </div>
+          </div>
+          <li class="nav-item dropdown">
+            <%= cl_image_tag current_user.profile_picture.key, height: 45, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to "Log in", new_user_session_path, class: "btn button" %>
+          </li>
+            <li class="nav-item">
+              <%= link_to "register", new_user_registration_path, class: "btn button btnwhite" %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

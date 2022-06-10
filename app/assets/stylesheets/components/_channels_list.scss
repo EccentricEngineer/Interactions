@@ -10,9 +10,8 @@ main .container .right .channel-box {
   padding: 20px;
   margin-top: 15px;
   .title-category {
-    color: var(--color-red);
+    color: $color-red;
     font-size: 14px;
-    letter-spacing: var(--letter-spacing-category);
   }
   .channel-banner {
     display: flex;

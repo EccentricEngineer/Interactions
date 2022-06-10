@@ -1,3 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.6%;
+  background: $color_white;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 0;
+  height: 182px;
+  border: 1px solid $color-border-transparent;
+  .image-searchcard {
+    // height: 100px;
+    width: 250px;
+    padding: 10px;
+  }
+  .image-searchcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    background: $color_white;
+    h3 {
+      line-height: 1;
+      margin: 0;
+    }
+    p {
+      position: relative;
+      margin: 1rem 0 0;
+    }
+    a {
+    }
+  }
+
+
+  // @media (min-width: 640px) {
+  //   flex-direction: row;
+  //   max-width: 700px;
+  //   .meta {
+  //     flex-basis: 40%;
+  //     height: auto;
+  //   }
+  //   .description {
+  //     flex-basis: 60%;
+  //     &:before {
+  //       transform: skewX(-3deg);
+  //       content: "";
+  //       background: #fff;
+  //       width: 30px;
+  //       position: absolute;
+  //       left: -10px;
+  //       top: 0;
+  //       bottom: 0;
+  //       z-index: -1;
+  //     }
+  //   }
+  //   &.alt {
+  //     flex-direction: row-reverse;
+  //     .description {
+  //       &:before {
+  //         left: inherit;
+  //         right: -10px;
+  //         transform: skew(3deg)
+  //       }
+  //     }
+  //     .details {
+  //       padding-left: 25px;
+  //     }
+  //   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .search-container {
+//   background-color: blue;
+//   // display: flex;
+//   // flex-direction: column;
+//   width: 862px;
+//   height: 182px;
+// }
+
+
+// .result-container {
+//   display: flex;
+//   flex-direction: row;
+//   .result-image {
+//     background-color: green;
+//     width: 412px;
+//     height: 162px;
+//   }
+//   .result-image img {
+//     object-fit: contain;
+//     width: 300px;
+//     height: 150px;
+//   }
+//   .result-text {
+//     background-color: yellow;
+//     display: flex;
+//     flex-direction: column;
+//     width: 200px;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // .search-result-container {
 //   // display: flex;
 //   // align-items: center;

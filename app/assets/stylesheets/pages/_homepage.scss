@@ -1,0 +1,25 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20vw;
+  margin-left: 20vw;
+  .title-description h2 {
+    padding-top: 50px;
+    text-align: center;
+  }
+  .title-description h3 {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .title-description h2 span {
+    color: $color-red;
+    font-weight: 500 !important;
+  }
+}
+
+.grid-homepage {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2vw;
+
+}
