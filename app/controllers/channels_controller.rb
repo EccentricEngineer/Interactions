@@ -10,6 +10,38 @@ class ChannelsController < ApplicationController
     else
       @channels = Channel.all.order('created_at DESC')
     end
+    if session[:instagram_user_id]
+      path = "https://graph.instagram.com/#{session[:instagram_user_id]}?fields=id,username,media&access_token=#{session[:access_token]}"
+      results = HTTParty.get(path)
+      @username = results.parsed_response['username']
+
+      media = results.parsed_response["media"]["data"]
+      # p media
+
+      @results = []
+
+
+
+      media.each do |x|
+        path = "https://graph.instagram.com/#{x["id"]}?fields=media_url&access_token=#{session[:access_token]}"
+        results = HTTParty.get(path)
+        parsed_results = results.parsed_response['media_url']
+        @results << parsed_results
+      end
+
+      p @results
+
+
+
+
+
+
+        # GET https://graph.instagram.com/{media-id}
+        # ?fields={fields}
+        # &access_token={access-token}
+
+
+    end
   end
 
   def show

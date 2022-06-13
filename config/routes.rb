@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/success', to: 'authorizations#success'
   get '/code', to: 'authorizations#code'
 
+
   post '/channels/:id/join', to: 'channels#join', as: 'channel_join'
 
   resources :channels do
