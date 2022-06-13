@@ -8,7 +8,7 @@
     <% @channels.each do |channel|  %>
     <div class="blog-card">
       <div class="image-searchcard">
-        <%#= cl_image_tag channel.photo.key %>
+        <%= cl_image_tag channel.photo.key %>
       </div>
       <div class="description">
         <h3> <%= channel.name %> </h3>
