@@ -15,30 +15,39 @@ nav {
 
   .search-bar {
     // background-color: var(--color-white);
+    align-items: center;
     background-color: white;
     border-radius: 25px;
     border: 1px solid $color-dark-transparent;
     color: $color-dark-transparent;
     display: flex;
     padding-left: 20px;
-
+    i {
+      align-items: center;
+    }
     form {
       border: none;
     }
+
 
   }
 
   input[type="search"] {
     background: transparent;
     width: 30vw;
-    margin-left: 1rem;
     font-size: 0.9rem;
     color: $color-dark-transparent;
     border: none;
+    color: $color-dark;
 
     ::placeholder {
       color: $color-dark-transparent;
     }
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    background-color: transparent;
   }
 
 

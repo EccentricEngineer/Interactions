@@ -10,6 +10,7 @@
     </div>
 
     <div class="search-bar">
+      <i class="fas fa-search"></i>
       <%= form_tag(channels_path, :method => "get", id: "search-form") do %>
       <%= search_field_tag :search, params[:search], placeholder: "search your favourite channels" ,class:"form-control string required" %>
       <button class="navbar-toggler" type="submit" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
