@@ -9,11 +9,6 @@
         <h3 class="title-category">FANS</h3>
         <div class="fan-banner">
           <%= render 'shared/online_fan'%>
-          <%= render 'shared/online_fan'%>
-          <%= render 'shared/online_fan'%>
-          <%= render 'shared/online_fan'%>
-          <%= render 'shared/online_fan'%>
-          <%= render 'shared/online_fan'%>
         </div>
       </div>
     </div>
@@ -22,30 +17,16 @@
       <%= render "shared/tabs" %>
       <%= render "shared/chatbox" %>
       <p>Please respect the rules of the channel, <a href="#">click here</a> to learn more.</p>
-      <a href="/channels/new">Create new channel</a>
-      <a href="/channels">See all the channels</a>
 
-      <%= render "shared/rewardcard" %>
+      <%# <%= render "shared/rewardcard" %>
     </div>
     <!------------------- RIGHT -->
     <div class="right">
       <!--------------- channels -->
       <div class="channel-box">
-        <h3 class="title-category">CHANNELS</h3>
-        <%= render 'shared/channel_list'%>
-        <%= render 'shared/channel_list'%>
-        <%= render 'shared/channel_list'%>
+        <h3 class="title-category">SUBSCRIBED CHANNELS</h3>
         <%= render 'shared/channel_list'%>
       </div>
     </div>
   </div>
 </main>
-
-<ul>
-  <% @channel.channelusers.each do |member| %>
-    <li>
-      <%= cl_image_tag member.user.profile_picture.key, height: 500, crop: :fill %>
-      <%= member.user.email %>
-    </li>
-  <% end %>
-</ul>

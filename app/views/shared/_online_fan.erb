@@ -1,7 +1,18 @@
-<div class="fan-avatar">
+<%# <div class="fan-avatar">
   <img src="./assets/user-photo.avif" alt="user avatar">
   <div class="fan-text">
     <h4 class="fan-username">@alana54</h4>
     <p class="online-status">online</p>
   </div>
-</div>
+</div> %>
+
+<ul>
+  <% @channel.channelusers.each do |member| %>
+    <div class="fan-avatar">
+      <%= cl_image_tag member.user.profile_picture.key%>
+      <div class="fan-text">
+        <h4 class="fan-username">@<%= member.user.username %></h4>
+      </div>
+    </div>
+  <% end %>
+</ul>
