@@ -2,7 +2,7 @@
   data-controller="channel-subscription"
   data-channel-subscription-channel-id-value="<%= @channel.id %>"
   >
-  <h3>#<%= @channel.name %>'channel</h3>
+  <h3>#<%= @channel.name %>'s channel</h3>
   <div class="messages" data-channel-subscription-target="messages">
     <% @channel.messages.each do |message| %>
       <%= render "messages/message", message: message %>
