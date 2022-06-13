@@ -12,7 +12,6 @@
   text-decoration: none;
   list-style: none;
   border: none;
-  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -20,6 +19,7 @@ body {
   color: $color-dark;
   background: $color-light;
   overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 
   h1 {
 
