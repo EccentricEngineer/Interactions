@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_10_093725) do
+ActiveRecord::Schema.define(version: 2022_06_13_085627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2022_06_10_093725) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "rewards", force: :cascade do |t|
+    t.text "name"
+    t.integer "price"
+    t.bigint "channel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_rewards_on_channel_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -97,4 +106,5 @@ ActiveRecord::Schema.define(version: 2022_06_10_093725) do
   add_foreign_key "channelusers", "users"
   add_foreign_key "messages", "channels"
   add_foreign_key "messages", "users"
+  add_foreign_key "rewards", "channels"
 end
