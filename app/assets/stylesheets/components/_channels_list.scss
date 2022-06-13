@@ -4,11 +4,17 @@ main .container .right .channel-box {
   background: white;
   display: flex;
   align-items: flex-start;
+  // align-items: center;
   column-gap: 1rem;
   width: 100%;
   flex-direction: column;
   padding: 20px;
-  margin-top: 15px;
+  margin-bottom: 0;
+  // margin-top: 15px;
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
   .title-category {
     color: $color-red;
     font-size: 14px;
@@ -23,7 +29,7 @@ main .container .right .channel-box {
     align-items: center;
   }
   .channel-avatar img {
-    width: 2.7rem;
+    // width: 2.7rem;
     aspect-ratio: 1/1;
     border-radius: 10px;
     /* overflow: hidden; */
@@ -37,5 +43,6 @@ main .container .right .channel-box {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 0%;
   }
 }
