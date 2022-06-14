@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_one :channel
   has_many :messages, dependent: :delete_all
 
+  has_many :coins
+
   has_one_attached :profile_picture
 
   devise :database_authenticatable, :registerable,
