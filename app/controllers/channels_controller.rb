@@ -14,7 +14,7 @@ class ChannelsController < ApplicationController
 
   def show
     @message = Message.new
-
+    @rewards = @channel.rewards
     if session[:instagram_user_id]
       path = "https://graph.instagram.com/#{session[:instagram_user_id]}?fields=id,username,media&access_token=#{session[:access_token]}"
       results = HTTParty.get(path)
