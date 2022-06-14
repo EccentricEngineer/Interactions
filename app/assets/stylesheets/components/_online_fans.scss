@@ -33,6 +33,7 @@ main .container .left .online-box {
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
+    border: 2px solid $color-border-transparent;
   }
   .fan-text {
     display: flex;
