@@ -13,7 +13,7 @@
       <div class="description">
         <h3> <%= channel.name %> </h3>
         <p> <%= channel.description %> </p>
-        <% if Channeluser.where(channel_id: channel.id, user: current_user) == current_user %>
+        <% if current_user.channelusers.select { |channeluser| channeluser.channel_id == channel.id}.empty? %>
           <%= link_to "Join", channel_join_path(channel), method: :post, class: "our-button" %>
         <% else %>
           <%= link_to "Visit", channel_path(channel), class: "our-button" %>

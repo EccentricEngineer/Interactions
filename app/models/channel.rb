@@ -6,6 +6,8 @@ class Channel < ApplicationRecord
   has_one_attached :photo
 
   has_many :messages, dependent: :delete_all
+  has_many :feeds
+  has_many :posts
 
   def self.search(search)
     where("name ILIKE ?", "%#{search}%")
