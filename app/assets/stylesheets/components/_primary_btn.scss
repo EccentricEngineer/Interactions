@@ -4,6 +4,9 @@
   background-color: $color-red;
   color: white;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
+  a:hover {
+    color: $color-dark;
+  }
 }

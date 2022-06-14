@@ -1,7 +1,19 @@
-<h1>Create you channel!</h1>
-<%= simple_form_for(@channel) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-   <%= f.input :photo, as: :file %>
-  <%= f.submit "Create channel", class: "btn btn-primary" %>
-<% end %>
+<div class="new-channel-container">
+
+  <h2>Create your <span>own</span> channel!</h2>
+  <p>It's your turn to build your community and grow as a creator!</p>
+
+  <div class="form-container">
+    <div class="image-box">
+      <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80" alt="new channel image">
+    </div>
+    <div class="form-new-channel">
+      <%= simple_form_for(@channel) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Create channel", class: "btn our-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>
