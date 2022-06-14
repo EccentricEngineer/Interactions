@@ -1,0 +1,36 @@
+.new-channel-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin-top: 50px;
+  }
+  span {
+    color: $color-red;
+  }
+  p {
+    border-bottom: 50px;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 400px;
+  background-color: $color-white;
+  border-radius: 15px;
+  border: 1px solid $color-border-transparent;
+  .image-box img {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .form-new-channel {
+    padding: 20px;
+    width: 400px;
+    justify-content: space-around;
+  }
+}
