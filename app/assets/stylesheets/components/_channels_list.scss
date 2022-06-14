@@ -34,6 +34,8 @@ main .container .right .channel-box {
     border-radius: 10px;
     /* overflow: hidden; */
     object-fit: cover;
+    border: 2px solid $color-border-transparent;
+
   }
   .channel-title {
     width: 90px;
