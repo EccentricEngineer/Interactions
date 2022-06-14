@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -207,4 +208,15 @@ header > .container {
     width: 70%;
     padding-top: 8px;
   }
+=======
+.feed-container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid $color-border-transparent;
+>>>>>>> 72be03df4a2e09fcde1fedcaab1566090abc0ae8
 }

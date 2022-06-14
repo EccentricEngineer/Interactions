@@ -5,14 +5,12 @@
 .blog-card {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1.6%;
   background: $color_white;
-  line-height: 1.4;
   font-family: sans-serif;
   border-radius: 10px;
   overflow: hidden;
   z-index: 0;
-  height: 182px;
+  // height: 182px;
   border: 1px solid $color-border-transparent;
   .image-searchcard {
     height: 160px;
@@ -20,9 +18,9 @@
     padding: 10px;
   }
   .image-searchcard img {
-    object-fit: fill;
-    border-radius: 50%;
-    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 120px;
     height: 100%;
   }
   .description {
@@ -42,7 +40,8 @@
       margin: 1rem 0 0;
     }
     a {
-      width: 250px;
+      width: 100px;
+      justify-items: right;
     }
   }
 
