@@ -21,6 +21,12 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 
+  // added
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  // added
+
   h1 {
 
   }
