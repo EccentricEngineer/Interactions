@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :channels do
     resources :messages, only: [:index, :create, :destroy]
+    # resources :rewards, only: [:index, :create, :destroy]
     resources :feeds
   end
 
