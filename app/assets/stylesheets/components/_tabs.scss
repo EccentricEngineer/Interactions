@@ -1,11 +1,32 @@
-.tabs-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  .active-tab {
+.tabs__head {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  color: $color-dark-transparent;
+  .tabs__toggle {
+    cursor: pointer;
+  }
+  .tabs__toggle:hover {
+    color: $color-dark;
+  }
+  .is-active {
     border-bottom: 3px solid $color-red;
-    padding-bottom: 10px;
+    color: $color-dark;
   }
-  .inactive-tab {
-    color: $color-dark-transparent;
+  .tabs__content h2 {
+    padding: 30px;
+    display: none;
   }
+  .tabs__title {
+    color: blue;
+  }
+}
+
+.tabs__content.is-active {
+  display: block;
+}
+
+.tabs__content {
+  display: none;
 }
