@@ -1,0 +1,5 @@
+meta_product_name: "Lovsquad"
+meta_title: "Lovsquad - Grow your community"
+meta_description: "Lovsquad is the platform to interact with your favourite communities"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
