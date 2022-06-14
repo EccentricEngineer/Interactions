@@ -19,18 +19,22 @@
 
       <div class="tabs" data-controller="tabs">
         <div class="tabs__head">
+        <%# --------------------------TABS------------- %>
           <span class="tabs__toggle is-active" data-tabs-target="tab" data-action="click->tabs#switch" id="chat">CHATROOM</span>
           <span class="tabs__toggle" data-tabs-target="tab" data-action="click->tabs#switch" id="feed">FEED</span>
           <span class="tabs__toggle" data-tabs-target="tab" data-action="click->tabs#switch" id="store">REWARD STORE</span>
         </div>
         <div class="tabs__body">
+        <%# ----------------------CHATROOM------------- %>
           <div class="tabs__content is-active" data-tabs-target="content" id="chat">
             <%= render "shared/chatbox" %>
             <p>Please respect the rules of the channel, <a href="#">click here</a> to learn more.</p>
           </div>
+                  <%# ----------------------FEED------------- %>
           <div class="tabs__content" data-tabs-target="content" id="feed">
             <h2 class="tabs__title">to do: feed</h2>
           </div>
+                  <%# ----------------------REWARD------------- %>
           <div class="tabs__content" data-tabs-target="content" id="store">
             <h2 class="tabs__title">to do: reward store</h2>
           </div>
