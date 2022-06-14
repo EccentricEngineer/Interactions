@@ -10,9 +10,6 @@ class FeedsController < ApplicationController
       media = results.parsed_response["media"]["data"]
       # p media
 
-
-
-
       media.each do |x|
         path = "https://graph.instagram.com/#{x["id"]}?fields=media_url,username,caption&access_token=#{session[:access_token]}"
         results = HTTParty.get(path)
