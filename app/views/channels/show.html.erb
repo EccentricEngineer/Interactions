@@ -1,6 +1,6 @@
 <main>
   <div class="container">
-  <!------------------- LEFT -->
+        <!------------------- LEFT -->
     <div class="left">
       <!------------------ creator box -->
       <%= render "shared/creator_box" %>
@@ -12,36 +12,34 @@
         </div>
       </div>
     </div>
-    <!------------------- MIDDLE -->
+        <!------------------- MIDDLE -->
     <div class="middle">
-
-      <%# <%= render "shared/tabs" %>
-
       <div class="tabs" data-controller="tabs">
         <div class="tabs__head">
-        <%# --------------------------TABS------------- %>
+          <!------------------- TABS -->
           <span class="tabs__toggle is-active" data-tabs-target="tab" data-action="click->tabs#switch" id="chat">CHATROOM</span>
           <span class="tabs__toggle" data-tabs-target="tab" data-action="click->tabs#switch" id="feed">FEED</span>
           <span class="tabs__toggle" data-tabs-target="tab" data-action="click->tabs#switch" id="store">REWARD STORE</span>
         </div>
         <div class="tabs__body">
-        <%# ----------------------CHATROOM------------- %>
+          <!------------------- CHATROOM -------------->
           <div class="tabs__content is-active" data-tabs-target="content" id="chat">
             <%= render "shared/chatbox" %>
             <p>Please respect the rules of the channel, <a href="#">click here</a> to learn more.</p>
           </div>
-                  <%# ----------------------FEED------------- %>
+            <!------------------- FEED -------------->
           <div class="tabs__content" data-tabs-target="content" id="feed">
-            <%= render "shared/feed" %>
+            <p>Test</p>
+              <%= render "shared/feed" %>
           </div>
-                  <%# ----------------------REWARD------------- %>
+                 <!------------------- REWARD -------------->
           <div class="tabs__content" data-tabs-target="content" id="store">
             <h2 class="tabs__title">to do: reward store</h2>
           </div>
         </div>
       </div>
     </div>
-    <!------------------- RIGHT -->
+        <!------------------- RIGHT -->
     <div class="right">
       <!--------------- coins -->
       <div class="coin-counter">
