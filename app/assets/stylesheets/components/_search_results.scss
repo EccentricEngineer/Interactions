@@ -14,7 +14,7 @@
   border: 1px solid $color-border-transparent;
   .image-searchcard {
     height: 160px;
-    width: 160px;
+    // width: 160px;
     padding: 10px;
   }
   .image-searchcard img {
@@ -23,65 +23,38 @@
     width: 120px;
     height: 100%;
   }
-  .description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    background: $color_white;
-    h3 {
-      line-height: 1;
-      margin: 0;
-    }
-    p {
-      position: relative;
-      margin: 1rem 0 0;
-    }
-    a {
-      width: 100px;
-      justify-items: right;
-    }
-  }
 
-
-  // @media (min-width: 640px) {
-  //   flex-direction: row;
-  //   max-width: 700px;
-  //   .meta {
-  //     flex-basis: 40%;
-  //     height: auto;
-  //   }
-  //   .description {
-  //     flex-basis: 60%;
-  //     &:before {
-  //       transform: skewX(-3deg);
-  //       content: "";
-  //       background: #fff;
-  //       width: 30px;
-  //       position: absolute;
-  //       left: -10px;
-  //       top: 0;
-  //       bottom: 0;
-  //       z-index: -1;
-  //     }
-  //   }
-  //   &.alt {
-  //     flex-direction: row-reverse;
-  //     .description {
-  //       &:before {
-  //         left: inherit;
-  //         right: -10px;
-  //         transform: skew(3deg)
-  //       }
-  //     }
-  //     .details {
-  //       padding-left: 25px;
-  //     }
-  //   }
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  background: $color_white;
+  width: 100%;
+  h3 {
+    line-height: 1;
+    margin: 0;
+  }
+  p {
+    position: relative;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  a {
+    width: 100px;
+    justify-items: right;
+  }
+  .join-button {
+    display: flex;
+    // background-color: green;
+    width: 100%;
+    justify-content: right;
+  }
+}
 
 
 

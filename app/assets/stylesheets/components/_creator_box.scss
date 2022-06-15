@@ -14,13 +14,14 @@ main .container .left .creator-box {
     color: $color-red;
   }
   img {
-    width: 5rem !important;
+    width: 8rem !important;
+    height: 8rem !important;
     aspect-ratio: 1/1 !important;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
     position: absolute;
-    top: -15%;
+    top: -20%;
     left: 50%;
     transform: translateX(-50%);
     border: 2px solid $color-red;
@@ -29,11 +30,15 @@ main .container .left .creator-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 30px;
+    p {
+      margin-bottom: 0%;
+    }
   }
   .creator-description {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 }
