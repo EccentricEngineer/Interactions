@@ -1,0 +1,24 @@
+<div class="feed-container">
+  <% if current_user == @channel.user %>
+    <h1>Hi <strong><%= current_user.username %></strong> do you want to link your Instagram feed to Lovsquad?</h1>
+  <% end %>
+    <a href="https://api.instagram.com/oauth/authorize?client_id=425954065799626&redirect_uri=<%=ENV['INSTAGRAM_REDIRECT_URI']%>/code?=channel=<%=@channel.id%>&scope=user_profile,user_media&response_type=code">FB</a>
+  <div class="feed-content">
+    <% @channel.posts.each do |post| %>
+      <div class="post-card">
+        <%# <h3>@Channel name</h3> %>
+        <h4><%= post.caption %></h4>
+        <div class="post-image">
+          <img src= <%= post.url %> alt="asdf" >
+          <%# <img src="https://images.unsplash.com/photo-1592329347810-258afdd206bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80" alt="post image"> %>
+        </div>
+        <div class="share-post">
+          <%= link_to "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}" do %>
+            <i class="fa-solid fa-share"></i>
+          <% end %>
+          <%# <i class="fas fa-share"></i> %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
