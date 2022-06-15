@@ -10,6 +10,11 @@
   padding: 0px 50px;
   margin-top: 50px;
 }
+.footer-copyright {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem;
+  color: $color-dark-transparent;
+}
 .footer-links {
   display: flex;
   align-items: center;

@@ -57,6 +57,7 @@ nav {
 
   h2 {
     margin-bottom: 0%;
+    font-family: 'Inter', sans-serif !important;
   }
 
   img {
@@ -87,6 +88,9 @@ nav {
   h4 {
     margin-right: 2rem;
     margin-bottom: 0px;
+    border-bottom: 2px solid $color-red;
+    font-family: 'Inter', sans-serif !important;
+
   }
 }
 
