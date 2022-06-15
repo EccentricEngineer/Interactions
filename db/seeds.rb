@@ -13,6 +13,7 @@ puts 'Seed: Deleting existing records...'
 
 Channeluser.delete_all
 Message.delete_all
+Post.delete_all
 Channel.delete_all
 User.delete_all
 
