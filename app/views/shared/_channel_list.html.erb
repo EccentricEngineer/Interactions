@@ -3,7 +3,7 @@
     <div class="channel-avatar">
       <%= cl_image_tag element.channel.photo.key, height: 50, crop: :fill %>
       <div class="channel-text">
-        <h4 class="channel-title">@<%= element.channel.name %></h4>
+        <h4 class="channel-title">@<%= link_to element.channel.name, channel_path(element.channel) %></h4>
       </div>
     </div>
   <% end %>

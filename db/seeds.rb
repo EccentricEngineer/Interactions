@@ -95,11 +95,17 @@ end
 
 Channel.all.each do |channel|
   caption = Faker::Hipster.sentence
-  photo_file = URI.open(images.sample)
+  url = images.sample
   channel_id = channel.id
 
-  new_post = Post.new(caption: caption)
-  new_post.url.attach(io: photo_file, filename: 'postphoto.png', content_type: 'image/png')
+  new_post = Post.new(channel_id: channel_id, caption: caption, url: url)
+  new_post.save
+
+  caption = Faker::Hipster.sentence
+  url = images.sample
+  channel_id = channel.id
+
+  new_post = Post.new(channel_id: channel_id, caption: caption, url: url)
   new_post.save
 end
 
