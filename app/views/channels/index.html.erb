@@ -23,12 +23,16 @@
         <%= cl_image_tag channel.photo.key %>
       </div>
       <div class="description">
-        <h3> <%= channel.name %> </h3>
+        <h3>@<%= channel.name %> </h3>
         <p> <%= channel.description %> </p>
         <% if current_user.channelusers.select { |channeluser| channeluser.channel_id == channel.id}.empty? %>
+        <div class="join-button">
           <%= link_to "Join", channel_join_path(channel), method: :post, class: "our-button" %>
+        </div>
         <% else %>
+        <div class="join-button">
           <%= link_to "Visit", channel_path(channel), class: "our-button" %>
+        </div>
         <% end %>
       </div>
     </div>
