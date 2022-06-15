@@ -6,7 +6,7 @@
   <% @channel.posts.each do |post| %>
     <%= post.caption  %>
     <img src= <%= post.url %> alt="asdf" >
-    <%= link_to "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}" do %>
+    <%= link_to "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}", target: :_blank do %>
       <i class="fab fa-facebook-square fa-4x facebook"></i>
     <% end %>
     <%#= link_to "https://twitter.com/intent/tweet?url=http://localhost:3000/" do %>

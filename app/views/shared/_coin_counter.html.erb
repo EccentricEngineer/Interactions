@@ -1,2 +1,2 @@
 <h3 class="title-category">COINS</h3>
-<p class="coins">123 <i class="fas fa-coins"></i></p>
+<p class="coins"> <%= Coin.find_by(user:current_user,channel:@channel).balance %> <i class="fas fa-coins"></i></p>
