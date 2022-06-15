@@ -18,7 +18,7 @@ class AuthorizationsController < ApplicationController
     session[:instagram_user_id] = response.parsed_response['user_id']
 
 
-    redirect_to channel_feeds_path(current_user.channel)
+    redirect_to channel_path(current_user.channel.id)
 
   end
 end
