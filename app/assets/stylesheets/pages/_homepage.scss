@@ -1,25 +1,100 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  margin-right: 20vw;
-  margin-left: 20vw;
-  .title-description h2 {
-    padding-top: 50px;
-    text-align: center;
-  }
+  margin-right: 10vw;
+  margin-left: 10vw;
+  // .title-description h2 {
+  //   padding-top: 50px;
+  //   text-align: center;
+  // }
   .title-description h3 {
     text-align: center;
-    padding-bottom: 50px;
   }
-  .title-description h2 span {
-    color: $color-red;
-    font-weight: 500 !important;
-  }
+  // .title-description h2 span {
+  //   color: $color-red;
+  //   font-weight: 500 !important;
+  // }
 }
 
 .grid-homepage {
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vw;
+  margin-top: 10px;
+  margin-right: 10vw;
+  margin-left: 10vw;
+}
 
+.image-banner {
+  margin: 0px !important;
+  height: 400px;
+  width: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-image:
+  //   linear-gradient(
+  //   rgba(255, 255, 255, 0.3),
+  //   $color-light,
+  //   ),
+  //   url("https://images.unsplash.com/photo-1592329347810-258afdd206bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80");
+  background-position: center;
+  background-size: cover;
+  .title-description {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100px;
+  }
+  // img {
+  // object-fit: contain;
+  // }
+  h2 {
+    text-align: center;
+    font-size: 18px !important;
+    padding-bottom: 30px;
+    font-family: 'Inter', sans-serif !important;
+
+  }
+
+  h3 {
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Inter', sans-serif !important;
+
+  }
+  h3 span {
+    border-bottom: 2px solid $color-red;
+  }
+  h1 {
+    text-align: center;
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif !important;
+
+  }
+  h1 mark {
+    background-color: $color-red;
+    color: $color-white;
+  }
+  h2 span {
+    color: $color-red;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 3px $color-light;
+    // border-bottom: 2px solid $color-red;
+  }
+  .create-center {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    .create-btn {
+      padding: 10px 32px 10px 32px;
+      // margin-top: 25px;
+      background-color: $color-red;
+      color: white;
+      border-radius: 10px;
+      font-size: 12px;
+      width: fit-content;
+      font-family: 'Inter', sans-serif !important;
+    }
+  }
 }

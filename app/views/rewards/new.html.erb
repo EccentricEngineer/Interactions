@@ -1,0 +1,7 @@
+<h1>Create a reward!</h1>
+<%= simple_form_for(@reward) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Create reward", class: "btn btn-primary" %>
+<% end %>

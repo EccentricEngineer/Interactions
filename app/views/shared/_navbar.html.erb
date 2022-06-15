@@ -15,7 +15,7 @@
       <%= search_field_tag :search, params[:search], placeholder: "search your favourite channels" ,class:"form-control string required" %>
       <button class="navbar-toggler" type="submit" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
+      </button>
       <% end %>
     </div>
 
@@ -35,6 +35,8 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Create channel", new_channel_path, class: "dropdown-item" %>
+
             </div>
           </li>
         <% else %>

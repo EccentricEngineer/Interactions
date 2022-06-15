@@ -1,6 +1,6 @@
 .footer {
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
   width: 100%;
   background: $color-white;
   display: flex;
@@ -9,6 +9,11 @@
   height: 50px;
   padding: 0px 50px;
   margin-top: 50px;
+}
+.footer-copyright {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem;
+  color: $color-dark-transparent;
 }
 .footer-links {
   display: flex;
