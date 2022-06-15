@@ -1,14 +1,15 @@
 <div class="reward-container">
-<div class="rewardcard">
-  <div class= "rewardcard-img" style="background-image: , url('<%= cl_image_path reward.photo.key %>')">
-  </div>
-  <div class="rewardcard-text">
-    <h4> <%= reward.name %></h4>
-  </div>
-  <div class="rewardcard-bottom">
-    <h4><%= reward.price %> <i class="fas fa-coins"></i></h4>
-    <%# <a href="#" class="our-button">Redeem</a> %>
-     <a href="#" class="redeem-btn">Redeem</a>
-  </div>
+  <h3 class="title-reward-block">Welcome in the reward store, here you can redeem your coins for anything you want!</h3>
+  <div class="rewardcard">
+    <div class= "rewardcard-img" style="background-image: , url('<%= cl_image_path reward.photo.key %>')">
+    </div>
+    <div class="rewardcard-text">
+      <h4> <%= reward.name %></h4>
+    </div>
+    <div class="rewardcard-bottom">
+      <h4><%= reward.price %> <i class="fas fa-coins"></i></h4>
+      <%# <a href="#" class="our-button">Redeem</a> %>
+      <a href="#" class="redeem-btn">Redeem</a>
+    </div>
   </div>
 </div>
