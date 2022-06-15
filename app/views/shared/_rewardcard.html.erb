@@ -9,7 +9,11 @@
     <div class="rewardcard-bottom">
       <h4><%= reward.price %> <i class="fas fa-coins"></i></h4>
       <%# <a href="#" class="our-button">Redeem</a> %>
-      <a href="#" class="redeem-btn">Redeem</a>
+      <% if Coin.find_by(user:current_user,channel:@channel).balance >= reward.price %>
+        <%= link_to "redeem", coin_path(Coin.find_by(user:current_user,channel:@channel), data: {id: reward.id}), method: :patch %>
+      <% else %>
+        <p>not enough funds</p>
+      <% end %>
     </div>
   </div>
 </div>

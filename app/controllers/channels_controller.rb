@@ -64,6 +64,7 @@ class ChannelsController < ApplicationController
   def join
     @channeluser = Channeluser.new({ user_id: current_user.id, channel_id: @channel.id })
     if @channeluser.save
+      Coin.create!({ user: current_user, channel: @channel, balance: 0 })
       redirect_to channel_path(@channel)
     else
       render json: @channeluser.errors.full_messages, status: 400
