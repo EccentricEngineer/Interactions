@@ -1,18 +1,24 @@
 .reward-container {
-  background-color: $color-white;
-  width: 175px;
-  height: auto;
-  border: 1px solid $color-border-transparent;
+  background-color: white;
   border-radius: 10px;
-  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $color-border-transparent;
+  .title-reward-block {
+    text-align: center;
+    padding: 20px;
+  }
 }
 
 .rewardcard {
+  margin: 20px;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  width: auto;
-  // background-color: red;
+  padding: 20px;
+  width: 175px;
+  border: 1px solid $color-border-transparent;
   height: auto;
   border-radius: 10px;
 }
@@ -25,7 +31,7 @@
   height: 77px;
   border-radius: 10px;
   object-fit: contain;
-  }
+}
 
 
   .rewardcard-bottom {

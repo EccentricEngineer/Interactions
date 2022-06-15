@@ -7,7 +7,7 @@
 </div> %>
 
 <ul>
-  <% @channel.channelusers.each do |member| %>
+  <% @channel.channelusers.first(5).each do |member| %>
     <div class="fan-avatar">
       <%= cl_image_tag member.user.profile_picture.key%>
       <div class="fan-text">

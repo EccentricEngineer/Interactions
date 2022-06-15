@@ -28,7 +28,7 @@ class ChannelsController < ApplicationController
         results = HTTParty.get(path)
         parsed_results = results.parsed_response
         p parsed_results
-        Post.create(channel: @channel,url:results.parsed_response["media_url"],caption:results.parsed_response["caption"])
+        Post.create!(channel: @channel, url:results.parsed_response["media_url"],caption:results.parsed_response["caption"])
 
         # Feed.new << parsed_results
       end
@@ -64,6 +64,7 @@ class ChannelsController < ApplicationController
   def join
     @channeluser = Channeluser.new({ user_id: current_user.id, channel_id: @channel.id })
     if @channeluser.save
+      Coin.create!({ user: current_user, channel: @channel, balance: 0 })
       redirect_to channel_path(@channel)
     else
       render json: @channeluser.errors.full_messages, status: 400

@@ -5,6 +5,28 @@
   justify-content: space-between;
   flex-grow: 1;
   width: auto;
-  border-radius: 10px;
-  border: 1px solid $color-border-transparent;
+  // border-radius: 10px;
+  // border: 1px solid $color-border-transparent;
+  height: fit-content;
+  padding: 20px;
+  border-bottom: 1px solid $color-border-transparent;
+  h3 {
+    // font-family: 'inter', sans-serif !important;
+  }
+  h4 i {
+    // font-family: 'inter', sans-serif !important;
+    font-size: smaller;
+    padding-left: 15px;
+  }
+  .share-post {
+    padding-top: 5px;
+    text-align: right;
+  }
+}
+
+.post-image {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }

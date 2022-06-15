@@ -1,0 +1,77 @@
+  <div class="our-button">
+    <% if @username %>
+      <p>here is your username: <strong><%= @username %></strong></p>
+    <% end %>
+    <a href="https://api.instagram.com/oauth/authorize?client_id=425954065799626&redirect_uri=<%=ENV['INSTAGRAM_REDIRECT_URI']%>/code?=channel=<%=@channel.id%>&scope=user_profile,user_media&response_type=code">Login into your account!</a>
+  </div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="author" content="Rodinei Teixeira" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <title>Instagram Feed</title>
+  </head>
+  <body>
+
+    <section class="profile-description">
+      <div class="container">
+
+        <!--profile-text-->
+        <div class="profile-info">
+          <p><strong>50</strong> Posts</p>
+          <p><strong>50</strong> Followers</p>
+          <p><strong>50</strong> Following</p>
+        </div>
+        <br />
+        <div class="profile-description">
+          <h3><%= @username %></h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <!--profile-info-->
+        <div class="clear"></div>
+      </div>
+      <!--container-->
+    </section>
+    <!--profile-description-->
+
+    <section class="feed">
+      <div class="container">
+        <div class="line-feed">
+          <div tab="publish" class="single-line-name">
+            <div style="display:block;" class="line-mark"></div>
+            <p style="font-weight:bold;">Posts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--feed-->
+
+    <section id="publish">
+      <div class="container">
+        <div
+          style="background-image" <% @channel.posts.each do |post| %>
+          <img src= <%= post.url %> class="publish-single"
+        <% end %> >
+        </div>
+      </div>
+    </section>
+    <!--publish-->
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<%# Display posts properly + (+link to photo? +++hover over them to watch comments and likes?)  %>
+<%# Link posts followers and following  %>
+<%# Link bio  %>
