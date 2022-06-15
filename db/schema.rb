@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_144807) do
+
+ActiveRecord::Schema.define(version: 2022_06_14_154213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 2022_06_14_144807) do
     t.bigint "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo"
     t.index ["channel_id"], name: "index_rewards_on_channel_id"
   end
 

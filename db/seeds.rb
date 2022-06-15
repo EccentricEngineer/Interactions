@@ -13,6 +13,9 @@ puts 'Seed: Deleting existing records...'
 
 Channeluser.delete_all
 Message.delete_all
+Reward.delete_all
+Post.delete_all
+Coin.delete_all
 Channel.delete_all
 User.delete_all
 
@@ -70,6 +73,40 @@ end
 
 User.all.each do |user|
   Channeluser.create!(user: user, channel: Channel.order('RANDOM()').first)
+end
+
+rewards = ["merchadise", "virtual hug", "Exclusive NFT", "15 minutes video call", "tickets to concert"]
+
+rewards_images = ["https://images.unsplash.com/photo-1579664531470-ac357f8f8e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                  "https://images.unsplash.com/photo-1606569371439-56b1e393a06b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+                  "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                ]
+
+Channel.all.each do |channel|
+  name = rewards.sample
+  price = rand(10...100)
+  photo_file = URI.open(rewards_images.sample)
+  channel_id = channel.id
+
+  new_reward = Reward.new(name: name, price: price, channel_id: channel_id)
+  new_reward.photo.attach(io: photo_file, filename: 'rewardphoto.png', content_type: 'image/png')
+  new_reward.save
+end
+
+Channel.all.each do |channel|
+  caption = Faker::Hipster.sentence
+  url = images.sample
+  channel_id = channel.id
+
+  new_post = Post.new(channel_id: channel_id, caption: caption, url: url)
+  new_post.save
+
+  caption = Faker::Hipster.sentence
+  url = images.sample
+  channel_id = channel.id
+
+  new_post = Post.new(channel_id: channel_id, caption: caption, url: url)
+  new_post.save
 end
 
 new_user = User.new(email: "test@test.com", username: "supertester", password: "123456", bio: "I am the mega tester", ig_tag: "megatester" )
