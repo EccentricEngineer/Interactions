@@ -28,7 +28,7 @@ class ChannelsController < ApplicationController
         results = HTTParty.get(path)
         parsed_results = results.parsed_response
         p parsed_results
-        Post.create(channel: @channel,url:results.parsed_response["media_url"],caption:results.parsed_response["caption"])
+        Post.create!(channel: @channel, url:results.parsed_response["media_url"],caption:results.parsed_response["caption"])
 
         # Feed.new << parsed_results
       end

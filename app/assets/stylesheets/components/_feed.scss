@@ -1,24 +1,5 @@
-// .feed-container {
-//   background: white;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   flex-grow: 1;
-//   width: auto;
-//   border-radius: 10px;
-//   border: 1px solid $color-border-transparent;
-// }
-
 .feed-container {
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid $color-border-transparent;
-}
-.post-card {
-  // background: white;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
