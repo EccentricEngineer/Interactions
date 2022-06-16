@@ -1,5 +1,5 @@
 <ul>
-  <% current_user.channelusers.each do |element| %>
+  <% current_user.channelusers.first(6).each do |element| %>
     <div class="channel-avatar">
       <%= cl_image_tag element.channel.photo.key, height: 50, crop: :fill %>
       <div class="channel-text">

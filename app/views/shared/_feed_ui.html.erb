@@ -26,7 +26,7 @@
               <%= "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}"%>
             </div>
             <%= link_to coin_path(Coin.find_by(user:current_user,channel:@channel), data: {action: "update"}), method: :patch do %>
-              <i class="fas fa-heart" data-action="click->coin#update"></i>
+              <i class="fas fa-coins" data-action="click->coin#update"></i>
             <% end %>
           </div>
         </div>
