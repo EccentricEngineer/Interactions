@@ -1,6 +1,6 @@
 <div class="feed-container">
   <div class="add-feed">
-    <% if current_user == @channel.user %>
+    <% if current_user == @channel.user && @channel.posts.nil? %>
       <h1>Hi <strong><%= current_user.username %></strong> Do you want to link your Instagram feed to Lovsquad?</h1>
       <a href="https://api.instagram.com/oauth/authorize?client_id=425954065799626&redirect_uri=<%=ENV['INSTAGRAM_REDIRECT_URI']%>/code?=channel=<%=@channel.id%>&scope=user_profile,user_media&response_type=code" class="our-button">
       Add your Instagram feed
@@ -19,14 +19,15 @@
         </div>
         <div class="post-bottom">
           <div class="caption">
-          <p><% post.caption %>Test</p>
+          <p><%= post.caption %></p>
           </div>
-          <div class="share-button">
-            <%= link_to "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}" , target: :_blank do %>
-              <i class="fas fa-heart"></i>
+          <div class="share-button" data-controller="coin">
+            <div data-coin-target="url" class="d-none">
+              <%= "https://www.facebook.com/share.php?u=https://lovsquad.com/posts/#{post.id}"%>
+            </div>
+            <%= link_to coin_path(Coin.find_by(user:current_user,channel:@channel), data: {action: "update"}), method: :patch do %>
+              <i class="fas fa-heart" data-action="click->coin#update"></i>
             <% end %>
-            <%#= link_to "update balance", coin_path(Coin.find_by(user:current_user,channel:@channel), data: {action: "update"}), method: :patch %>
-            <%# <i class="fas fa-share"></i> %>
           </div>
         </div>
       </div>
