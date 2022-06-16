@@ -1,7 +1,7 @@
 <div class="form-container">
   <h1>Create a reward!</h1>
   <div class="form-container-register">
-    <%= simple_form_for(@reward) do |f| %>
+    <%= simple_form_for [@channel, @reward] do |f| %>
       <%= f.input :name %>
       <%= f.input :price %>
       <%= f.input :photo, as: :file %>
