@@ -1,0 +1,33 @@
+.register-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.form-container-register {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  height: fit-content;
+  background-color: $color-white;
+  border-radius: 15px;
+  border: 1px solid $color-border-transparent;
+  padding: 20px;
+  .form-new-channel {
+    padding: 20px;
+    width: 400px;
+    justify-content: space-around;
+  }
+}
+
+.register-links {
+  text-align: center;
+  padding-top: 20px;
+  a {
+    color: $color-dark;
+  }
+}
