@@ -19,7 +19,9 @@
         <% if Coin.find_by(user:current_user,channel:@channel).balance >= reward.price %>
           <%= link_to "redeem", coin_path(Coin.find_by(user:current_user,channel:@channel), data: {id: reward.id}), method: :patch %>
         <% else %>
-          <p>Insufficient coins</p>
+          <% unless @channel.user == current_user %>
+            <p>Insufficient coins</p>
+           <% end %>
         <% end %>
       </div>
     </div>

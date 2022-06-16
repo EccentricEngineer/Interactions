@@ -6,9 +6,9 @@ class Channel < ApplicationRecord
   has_one_attached :photo
 
   has_many :messages, dependent: :delete_all
-  has_many :feeds
-  has_many :posts
-  has_many :rewards
+  has_many :feeds, dependent: :delete_all
+  has_many :posts, dependent: :delete_all
+  has_many :rewards, dependent: :delete_all
   has_many :coins, dependent: :delete_all
 
   def self.search(search)
