@@ -1,0 +1,17 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.signup-links {
+  text-align: center;
+  padding-top: 20px;
+  a {
+    color: $color-dark;
+  }
+}
