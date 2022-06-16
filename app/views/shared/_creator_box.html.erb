@@ -13,11 +13,10 @@
   </div>
 <%# to import from ali %>
 
-  <%# <a href="" class="our-button">unsubscribe</a> %>
-
-  <%= link_to "Unsubscribe", channeluser_path(Channeluser.find_by(user_id: current_user.id, channel_id: @channel.id )), method: :delete, data: {confirm: "Are you sure?"}, class: "our-button" %>
-
-
-<%# to import from ali %>
+  <% if @channel.user == current_user %>
+    <%= link_to "Modify channel", edit_channel_path(@channel), class: "our-button" %>
+  <% else %>
+    <%= link_to "Unsubscribe", channeluser_path(Channeluser.find_by(user_id: current_user.id, channel_id: @channel.id )), method: :delete, data: {confirm: "Are you sure?"}, class: "our-button" %>
+  <% end %>
 
 </div>

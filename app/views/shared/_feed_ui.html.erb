@@ -1,8 +1,12 @@
 <div class="feed-container">
-  <% if current_user == @channel.user %>
-    <h1>Hi <strong><%= current_user.username %></strong> Do you want to link your Instagram feed to Lovsquad?</h1>
-    <a href="https://api.instagram.com/oauth/authorize?client_id=425954065799626&redirect_uri=<%=ENV['INSTAGRAM_REDIRECT_URI']%>/code?=channel=<%=@channel.id%>&scope=user_profile,user_media&response_type=code">FB</a>
-  <% end %>
+  <div class="add-feed">
+    <% if current_user == @channel.user %>
+      <h1>Hi <strong><%= current_user.username %></strong> Do you want to link your Instagram feed to Lovsquad?</h1>
+      <a href="https://api.instagram.com/oauth/authorize?client_id=425954065799626&redirect_uri=<%=ENV['INSTAGRAM_REDIRECT_URI']%>/code?=channel=<%=@channel.id%>&scope=user_profile,user_media&response_type=code" class="our-button">
+      Add your Instagram feed
+      </a>
+    <% end %>
+  </div>
   <div class="feed-content">
     <% @channel.posts.each do |post| %>
       <div class="post-card">
