@@ -1,10 +1,32 @@
-.message-content {
+.sender{
   display: flex;
-  background-color: $color-blue-message;
-  padding: 10px 10px 18px 10px;
-  border-radius: 5px;
-  p {
-    margin-bottom: 0px;
+  justify-content: flex-end;
+  align-items: center;
+
+  .message-content {
+    display: flex;
+    background-color: $color-blue-message;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    p {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.receiver{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .message-content {
+    display: flex;
+    background-color: $color-grey-message;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    p {
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -21,4 +43,14 @@
     align-content: flex-end;
     font-size: 10px;
   }
+}
+
+.fan-avatar img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 2px solid $color-border-transparent;
+  margin-right: 3px;
 }

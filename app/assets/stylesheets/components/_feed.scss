@@ -18,16 +18,50 @@
     font-size: smaller;
     padding-left: 15px;
   }
-  .share-post {
-    padding-top: 5px;
-    text-align: right;
-  }
+}
+
+.post-card {
+  border: 2px solid $light-gray;
+  border-radius: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .post-image {
   img {
     width: 100%;
+    object-fit: contain;
+    height: 580px;
+  }
+}
+
+.post-top {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 15px 15px 15px 15px;
+
+  img {
+    width: 1.8rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
     object-fit: cover;
-    height: 350px;
+    border: 2px solid $color-red;
+    margin-right: 5px;
+  }
+}
+
+.post-bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 15px 15px;
+
+  .share-button {
+
+    .fas{
+      color: $color-red;
+      font-size: 30px;
+    }
   }
 }
