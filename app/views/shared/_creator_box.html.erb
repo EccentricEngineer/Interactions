@@ -13,7 +13,10 @@
   </div>
 <%# to import from ali %>
 
-  <a href="#" class="our-button">unsubscribe</a>
+  <%# <a href="" class="our-button">unsubscribe</a> %>
+
+  <%= link_to "Unsubscribe", channeluser_path(Channeluser.find_by(user_id: current_user.id, channel_id: @channel.id )), method: :delete, data: {confirm: "Are you sure?"}, class: "our-button" %>
+
 
 <%# to import from ali %>
 

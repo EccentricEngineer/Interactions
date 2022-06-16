@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :channelusers, only: [:destroy]
   get 'errors/not_found'
   get 'errors/internal_server_error'
   devise_for :users
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
     resources :feeds
     resources :rewards, only: [:create, :destroy]
   end
+
 
   resources :posts, only: [:show]
 
