@@ -1,6 +1,6 @@
 class ChannelsController < ApplicationController
 
-  before_action :set_channel, only: [:show, :edit, :update, :destroy, :join]
+  before_action :set_channel, only: [:show, :edit, :update, :destroy, :join, :leave]
 
   def index
     @channels = Channel.all
