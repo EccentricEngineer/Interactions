@@ -1,0 +1,25 @@
+.new-reward-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.form-reward-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid $color-border-transparent;
+  padding: 20px;
+  .create-button {
+    display: flex;
+    justify-content: center;
+  }
+}
