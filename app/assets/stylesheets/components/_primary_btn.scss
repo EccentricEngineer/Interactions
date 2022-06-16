@@ -6,7 +6,8 @@
   border-radius: 10px;
   font-size: 12px;
   text-align: center;
-  :hover {
-    color: $white;
+  &:hover {
+    color: $white !important;
+    background-color: red;
   }
 }
