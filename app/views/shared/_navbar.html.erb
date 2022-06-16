@@ -35,7 +35,13 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%= link_to "Create channel", new_channel_path, class: "dropdown-item" %>
+
+              <% if current_user.channel.nil? %>
+                <%= link_to "Create channel", new_channel_path, class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Update channel", edit_channel_path(current_user.channel), class: "dropdown-item" %>
+                <%= link_to "Delete channel", channel_path(current_user.channel), class: "dropdown-item", method: :delete, data: { confirm: "Are you sure?" } %>
+              <% end %>
             </div>
           </li>
         <% else %>
