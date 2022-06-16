@@ -20,6 +20,7 @@ export default class extends Controller {
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
+
   resetForm(event){
     // resets the form for the sender only!
     event.target.reset()

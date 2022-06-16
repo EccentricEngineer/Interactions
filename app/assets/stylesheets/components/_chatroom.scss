@@ -45,3 +45,20 @@
       align-items: center;
     }
   }
+
+  .fas {
+    color: $color-red;
+  }
+
+  .message_content{
+    height: 40px;
+
+    textarea{
+      height: 100%;
+    }
+  }
+
+.buttonchat {
+    background-color: unset;
+    margin-left: 6px;
+  }

@@ -15,8 +15,10 @@
     <%= f.input :content,
       label: false,
       placeholder: "type your message to ##{@channel.name}",
-      wrapper_html: {class: "flex-grow-1 align-inputfield"}
+      wrapper_html: {class: "flex-grow-1 align-inputfield input-box"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary" %>
+    <%= button_tag(type: 'submit', class: "buttonchat") do %>
+    <i class="fas fa-paper-plane"></i>
+    <% end %>
   <% end %>
 </div>
