@@ -1,2 +1,6 @@
 <h3 class="title-category">COINS</h3>
-<p class="coins"> <%= Coin.find_by(user:current_user,channel:@channel).balance %> <i class="fas fa-coins"></i></p>
+<% if @channel.user == current_user %>
+  <p class="coins"> <strong>Tell your fans to share your content to get coins!</strong></p>
+<% else %>
+  <p class="coins"> <%= Coin.find_by(user:current_user,channel:@channel).balance %> <i class="fas fa-coins"></i></p>
+<% end %>

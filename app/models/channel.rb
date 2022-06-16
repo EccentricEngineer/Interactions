@@ -9,7 +9,7 @@ class Channel < ApplicationRecord
   has_many :feeds
   has_many :posts
   has_many :rewards
-  has_many :coins
+  has_many :coins, dependent: :delete_all
 
   def self.search(search)
     where("name ILIKE ?", "%#{search}%")

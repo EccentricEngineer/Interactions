@@ -33,10 +33,7 @@
           </div>
                  <!------------------- REWARD -------------->
           <div class="tabs__content" data-tabs-target="content" id="store">
-            <% @rewards.each do |reward| %>
-              <%= render "shared/rewardcard", reward: reward %>
-            <% end %>
-
+              <%= render "shared/rewardcard" %>
           </div>
         </div>
       </div>

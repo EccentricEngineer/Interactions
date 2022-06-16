@@ -2,22 +2,26 @@
   <h3 class="title-reward-block">Welcome in the reward store, here you can redeem your coins for anything you want!</h3>
   <div class="new-reward">
     <%# <a href="#" class= "our-button" >create a new reward</a> %>
-    <%= link_to "create a new reward", new_channel_reward_path(@channel), class: "our-button" %>
+    <% if @channel.user == current_user %>
+      <%= link_to "create a new reward", new_channel_reward_path(@channel), class: "our-button" %>
+    <% end %>
+
   </div>
-  <div class="rewardcard">
-    <div class="rewardcard-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reward.photo.key %>')">
+  <% @rewards.each do |reward| %>
+    <div class="rewardcard">
+      <div class="rewardcard-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reward.photo.key %>')">
+      </div>
+      <div class="rewardcard-text">
+        <h4> <%= reward.name %></h4>
+      </div>
+      <div class="rewardcard-bottom">
+        <h4><%= reward.price %> <i class="fas fa-coins"></i></h4>
+        <% if Coin.find_by(user:current_user,channel:@channel).balance >= reward.price %>
+          <%= link_to "redeem", coin_path(Coin.find_by(user:current_user,channel:@channel), data: {id: reward.id}), method: :patch %>
+        <% else %>
+          <p>Insufficient coins</p>
+        <% end %>
+      </div>
     </div>
-    <div class="rewardcard-text">
-      <h4> <%= reward.name %></h4>
-    </div>
-    <div class="rewardcard-bottom">
-      <h4><%= reward.price %> <i class="fas fa-coins"></i></h4>
-      <%# <a href="#" class="our-button">Redeem</a> %>
-      <% if Coin.find_by(user:current_user,channel:@channel).balance >= reward.price %>
-        <%= link_to "redeem", coin_path(Coin.find_by(user:current_user,channel:@channel), data: {id: reward.id}), method: :patch %>
-      <% else %>
-        <p>Insufficient coins</p>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
