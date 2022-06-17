@@ -43,7 +43,7 @@ class ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
     @channel.user_id = current_user.id
     if @channel.save
-      redirect_to channel_path(@channel)
+      redirect_to channels_path
     else
       render json: @channel.errors.full_messages, status: 422
     end
