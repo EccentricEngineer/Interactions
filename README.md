@@ -1,6 +1,5 @@
-# LovSquad: Community based growth for content creators.
+# Interactions: Final Group Project @LeWagon Bootcamp
 
-[www.lovsquad.com](https://lovsquad.com)
 
 ## Install
 
